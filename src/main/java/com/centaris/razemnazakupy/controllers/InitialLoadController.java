@@ -1,6 +1,5 @@
 package com.centaris.razemnazakupy.controllers;
 
-import com.centaris.razemnazakupy.model.Gender;
 import com.centaris.razemnazakupy.model.InitialLoadRQ;
 import com.centaris.razemnazakupy.model.Person;
 import org.springframework.web.bind.annotation.GetMapping;
