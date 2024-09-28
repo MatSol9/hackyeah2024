@@ -1,4 +1,4 @@
 package com.centaris.razemnazakupy.model;
 
-public record Person(String id, String name) {
+public record Person(String id, String name, Gender gender) {
 }
