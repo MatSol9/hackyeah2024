@@ -7,6 +7,11 @@
   <name>Archetype - razemnazakupy</name>
   <url>http://maven.apache.org</url>
 
+  <properties>
+    <maven.compiler.target>23</maven.compiler.target>
+    <maven.compiler.source>23</maven.compiler.source>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -20,12 +25,12 @@
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-autoconfigure</artifactId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
       <version>3.3.4</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-actuator</artifactId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
       <version>3.3.4</version>
     </dependency>
     <dependency>
