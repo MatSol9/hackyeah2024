@@ -19,7 +19,7 @@ public class PersonLikedSubscriber {
     @Value("${gcp.project-id}")
     private String projectId;
 
-    @Value("${gcp.pubsub.subscription-id}")
+    @Value("${gcp.pubsub.person-liked-subscription-id}")
     private String subscriptionId;
 
     private Subscriber subscriber;

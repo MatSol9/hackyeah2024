@@ -5,6 +5,6 @@ management:
   port: 8080
 
 gcp:
-  project-id: your-gcp-project-id
+  project-id: project-id
   pubsub:
-    subscription-id: your-subscription-id
+    person-liked-subscription-id: person-liked-subscription-id
