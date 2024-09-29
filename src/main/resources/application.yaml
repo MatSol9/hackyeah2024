@@ -3,3 +3,8 @@ server:
 
 management:
   port: 8080
+
+gcp:
+  project-id: your-gcp-project-id
+  pubsub:
+    subscription-id: your-subscription-id
