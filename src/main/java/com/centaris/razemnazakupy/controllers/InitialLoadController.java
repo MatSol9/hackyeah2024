@@ -1,17 +1,26 @@
 package com.centaris.razemnazakupy.controllers;
 
 import com.centaris.razemnazakupy.model.InitialLoadRQ;
-import com.centaris.razemnazakupy.model.Person;
+import com.centaris.razemnazakupy.model.InitialLoadRS;
+import com.centaris.razemnazakupy.model.MatchCriteria;
+import com.centaris.razemnazakupy.persistence.PersistenceService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
 public class InitialLoadController {
+    private final PersistenceService persistenceService;
+
+    public InitialLoadController(PersistenceService persistenceService) {
+        this.persistenceService = persistenceService;
+    }
+
     @GetMapping("/initialLoad")
-    public List<Person> getInitialLoad(@RequestBody InitialLoadRQ initialLoadRQ) {
-        return List.of(new Person("Mocked", "Mocked", initialLoadRQ.gender()));
+    public InitialLoadRS getInitialLoad(@RequestBody InitialLoadRQ initialLoadRQ) {
+        return new InitialLoadRS(persistenceService.getPeopleMatchingCriteria(
+                new MatchCriteria(initialLoadRQ.gender())),
+                persistenceService.getPeopleLikedBy(initialLoadRQ.id()),
+                persistenceService.getPeopleLiking(initialLoadRQ.id()));
     }
 }
